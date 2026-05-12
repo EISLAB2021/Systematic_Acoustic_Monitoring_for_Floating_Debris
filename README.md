@@ -1,8 +1,8 @@
 # Acoustic-Based Underwater Floating Debris Tracking
 
-Tracking module for an acoustic monitoring system for underwater floating debris. This repository focuses on using spatiotemporal information in sonar image sequences to estimate debris motion vectors, support behavior analysis, and generate motion-based pseudo-labels.
+Tracking module for an acoustic monitoring system for underwater floating debris. This repository focuses on using spatiotemporal information in acoustic data to estimate debris motion vectors, support behavior analysis, and generate motion-based pseudo-labels.
 
-The object detection component is maintained separately. Please refer to `xxxx` for the detection workflow and model training code.
+The debris detection component was developed and is maintained separately by another team member. Please refer to https://github.com/EISLAB2021/Marine_Debris_Detection_YOLOv8.
 
 ## Project Background
 
