@@ -100,9 +100,11 @@ data/
 
 - The tracking workflow estimates dense optical flow between adjacent sonar frames and visualizes the motion field as debris motion vectors.
 - Motion vectors are used to analyze the movement behavior of floating debris over time.
+- The threshold parameters used in motion estimation may require adaptive tuning under different underwater environments to account for acoustic noise, reverberation, and sonar imaging artifacts.
 - The same motion information can be converted into pseudo-label bounding boxes for downstream detection experiments.
 - ARIS parsing utilities are included under `src/debris_flow/aris/` for working with `.aris` sonar files.
 
 ## Related Repository
 
-The ARIS data parsing utilities in this project were developed with reference to the public [`pyARIS`](https://github.com/EminentCodfish/pyARIS) repository by Chris Rillahan. 
+- The ARIS data parsing utilities in this project were developed with reference to the public [`pyARIS`](https://github.com/EminentCodfish/pyARIS) repository by Chris Rillahan. 
+- Further technical information about ARIS/DIDSON sonar systems is available from the official Sound Metrics GitHub repository: https://github.com/SoundMetrics
