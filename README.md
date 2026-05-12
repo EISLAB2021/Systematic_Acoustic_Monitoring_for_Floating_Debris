@@ -6,7 +6,7 @@ The debris detection component was developed and is maintained separately by ano
 
 ## Project Background
 
-This work is part of a three-year environmental protection project aimed at developing a systematic acoustic monitoring method for underwater floating debris. The system is designed for low-visibility underwater environments where optical cameras are often unreliable. Forward-looking imaging sonar is used to observe debris targets, and this repository provides the tracking component that estimates target motion from sequential sonar frames.
+This work is part of a three-year environmental protection project aimed at developing a systematic acoustic monitoring method for underwater floating debris. The system is designed for low-visibility conditions, such as dark or turbid underwater environments, which are common in most marine environments. Forward-looking sonar (FLS) is used to observe debris targets, and this repository provides the tracking component that estimates target motion from sequential sonar frames.
 
 ## Scope
 
