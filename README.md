@@ -1,4 +1,4 @@
-# Underwater Floating Debris Tracking
+# Acoustic-Based Underwater Floating Debris Tracking
 
 Tracking module for an acoustic monitoring system for underwater floating debris. This repository focuses on using spatiotemporal information in sonar image sequences to estimate debris motion vectors, support behavior analysis, and generate motion-based pseudo-labels.
 
