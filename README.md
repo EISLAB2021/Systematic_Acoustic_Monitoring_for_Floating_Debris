@@ -16,6 +16,7 @@ This repository covers:
 - tracking-oriented visualization of underwater floating debris movement
 - behavior analysis based on temporal motion cues
 - pseudo-label generation from motion regions
+- auxiliary frequency-domain inspection of sonar image quality and texture
 
 ## Sonar Hardware
 
