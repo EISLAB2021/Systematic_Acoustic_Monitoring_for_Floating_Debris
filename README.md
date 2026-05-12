@@ -17,8 +17,6 @@ This repository covers:
 - behavior analysis based on temporal motion cues
 - pseudo-label generation from motion regions
 
-It does not include target detector training or inference code.
-
 ## Sonar Hardware
 
 The laboratory system uses an **ARIS Explorer 3000 forward-looking sonar**. Its acoustic imaging output provides the frame sequence used by the tracking pipeline in this repository.
@@ -59,7 +57,7 @@ Field experiments used a **DIDSON forward-looking sonar**, the previous generati
 | Maximum cable length, 100/10BaseT | 152 m |
 | Maximum cable length, Patton extender | 1220 m with local power |
 
-ARIS and DIDSON data are stored in sonar-specific beam/range formats before being remapped into image-like frames. For this reason, the repository includes ARIS parsing utilities under `src/debris_flow/aris/`, adapted from `pyARIS`, to support reading and projecting sonar data during preprocessing.
+ARIS and DIDSON data are stored in sonar-specific beam/range formats before being remapped into image-like frames for visualization and downstream processing. In particular, ARIS recordings are typically stored in proprietary .aris formats, while DIDSON data are commonly stored in .ddf (DIDSON Data File) formats. Both formats preserve the original acoustic beam and range information acquired by the forward-looking sonar system. For this reason, the repository includes ARIS parsing utilities under `src/debris_flow/aris/`, adapted from `pyARIS`, to support reading and projecting sonar data during preprocessing.
 
 ## Repository Layout
 
@@ -98,45 +96,6 @@ data/
     `-- sample.aris
 ```
 
-Raw datasets, generated masks, labels, videos, and experiment outputs are ignored by Git by default.
-
-## Common Workflows
-
-Run dense optical flow on two frames:
-
-```bash
-python scripts/run_pair_demo.py ^
-  --frame1 data/sonar_frames/000104.jpg ^
-  --frame2 data/sonar_frames/000106.jpg ^
-  --output runs/pair_demo
-```
-
-Generate optical-flow images for a sequence:
-
-```bash
-python scripts/build_flow_images.py ^
-  --input-dir data/sonar_frames ^
-  --output-dir runs/flow_images
-```
-
-Generate YOLO-format pseudo-labels from flow images:
-
-```bash
-python scripts/generate_pseudo_labels.py ^
-  --flow-images runs/flow_images ^
-  --sonar-images data/sonar_frames ^
-  --output-dir runs/pseudo_labels ^
-  --csv-path runs/pseudo_labels.csv
-```
-
-Project a rectangular sonar image into a fan-shaped view:
-
-```bash
-python scripts/project_sonar_image.py ^
-  --input data/sonar_frames/000104.jpg ^
-  --output runs/fan_projection.png
-```
-
 ## Notes
 
 - The tracking workflow estimates dense optical flow between adjacent sonar frames and visualizes the motion field as debris motion vectors.
@@ -146,8 +105,4 @@ python scripts/project_sonar_image.py ^
 
 ## Related Repository
 
-- Target detection code: `xxxx`
-
-## Third-Party Code
-
-The ARIS file parsing utilities are based on the public `pyARIS` implementation by Chris Rillahan. See `THIRD_PARTY_NOTICES.md` for attribution.
+The ARIS data parsing utilities in this project were developed with reference to the public [`pyARIS`](https://github.com/EminentCodfish/pyARIS) repository by Chris Rillahan. 
